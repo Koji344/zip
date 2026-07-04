@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>検索結果一覧 | 郵便番号検索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header class="topbar">
+      <button type="button" id="menu-btn" class="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <h1>検索結果一覧</h1>
+      <nav id="nav-menu" class="nav-menu" hidden>
+        <a href="index.html" class="nav-link">住所検索</a>
+        <a href="keyword.html" class="nav-link">キーワードから郵便番号</a>
+        <a href="history.html" class="nav-link">検索結果一覧</a>
+      </nav>
+    </header>
+
+    <div class="history-toolbar">
+      <button type="button" id="clear-history-btn">履歴をすべて削除</button>
+    </div>
+
+    <p id="empty-message" class="message info" hidden>検索履歴はまだありません。</p>
+
+    <div id="history-area"></div>
+  </main>
+
+  <script src="history-store.js"></script>
+  <script src="nav.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>

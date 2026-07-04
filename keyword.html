@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キーワードから郵便番号検索 | 郵便番号検索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header class="topbar">
+      <button type="button" id="menu-btn" class="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <h1>キーワードから郵便番号検索</h1>
+      <nav id="nav-menu" class="nav-menu" hidden>
+        <a href="index.html" class="nav-link">住所検索</a>
+        <a href="keyword.html" class="nav-link">キーワードから郵便番号</a>
+        <a href="history.html" class="nav-link">検索結果一覧</a>
+      </nav>
+    </header>
+
+    <form id="keyword-form" autocomplete="off">
+      <label for="keyword">地名・市区町村名・会社名など（スペースまたはカンマ区切りで複数指定可）</label>
+      <div class="input-row">
+        <input type="text" id="keyword" name="keyword" placeholder="例: 任天堂、新宿区 新宿" required>
+        <button type="submit">検索</button>
+      </div>
+    </form>
+
+    <p id="message" class="message" hidden></p>
+
+    <div id="result-area"></div>
+  </main>
+
+  <script src="history-store.js"></script>
+  <script src="nav.js"></script>
+  <script src="keyword.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>郵便番号検索</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <div id="lock-screen">
+      <h1>パスワードが必要です</h1>
+      <form id="lock-form" autocomplete="off">
+        <label for="lock-password">パスワード</label>
+        <div class="input-row">
+          <input type="password" id="lock-password" name="password" required>
+          <button type="submit">開く</button>
+        </div>
+      </form>
+      <p id="lock-message" class="message error" hidden></p>
+    </div>
+
+    <div id="app-content" hidden>
+      <header class="topbar">
+        <button type="button" id="menu-btn" class="hamburger-btn" aria-label="メニュー" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <h1>郵便番号から住所検索</h1>
+        <nav id="nav-menu" class="nav-menu" hidden>
+          <a href="index.html" class="nav-link">住所検索</a>
+          <a href="keyword.html" class="nav-link">キーワードから郵便番号</a>
+          <a href="history.html" class="nav-link">検索結果一覧</a>
+          <button type="button" id="logout-btn" class="nav-link nav-link-button">ログアウト</button>
+        </nav>
+      </header>
+
+      <form id="zip-form" autocomplete="off">
+        <label for="zipcode">郵便番号（ハイフンなし・7桁）</label>
+        <div class="input-row">
+          <input type="text" id="zipcode" name="zipcode" placeholder="例: 1000001" inputmode="numeric" maxlength="8" required>
+          <button type="submit">検索</button>
+        </div>
+      </form>
+
+      <p id="message" class="message" hidden></p>
+
+      <div id="result-area"></div>
+
+      <div id="address-section" hidden>
+        <label for="address-input">住所</label>
+        <input type="text" id="address-input" placeholder="住所">
+
+        <label for="banchi-input">番地・建物名など</label>
+        <input type="text" id="banchi-input" placeholder="例: 1-2-3 〇〇ビル4F">
+
+        <button type="button" id="map-btn">地図</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="history-store.js"></script>
+  <script src="nav.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
